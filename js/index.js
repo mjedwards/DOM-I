@@ -39,4 +39,149 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+// nav section 
+//variables for the Navigation Section
+let navItemOne = document.querySelector("a:nth-of-type(1)");
+let navItemTwo = document.querySelector("a:nth-of-type(2)");
+let navItemThree = document.querySelector("a:nth-of-type(3)");
+let navItemFour = document.querySelector("a:nth-of-type(4)");
+let navItemFive = document.querySelector("a:nth-of-type(5)");
+let navItemSix = document.querySelector("a:nth-of-type(6)");
+//created an array so I can loop through the data
+let navArr = [navItemOne, navItemTwo, navItemThree, navItemFour, navItemFive, navItemSix]
+
+// ------------------------------------
+
+
+
+
+// call to actin section 
+let ctaH1 = document.querySelector("h1:nth-of-type(1)");
+ctaH1.innerHTML = siteContent.cta['h1'];
+let ctaButton = document.querySelector("button:nth-of-type(1)");
+ctaButton.innerHTML = siteContent.cta['button'];
+let ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute('src', siteContent.cta['img-src']);
+
+// ------------------------------------
+
+// main content section 
+let mainContentOne = document.querySelector(".top-content h4:nth-of-type(1)");
+mainContentOne.innerHTML = siteContent["main-content"]["features-h4"];
+let mainContentTwo = document.querySelector(".top-content p:nth-of-type(1)");
+mainContentTwo.innerHTML = siteContent["main-content"]["features-content"];
+
+
+let mainContentThree = document.querySelector(".top-content div:nth-of-type(2) h4:nth-of-type(1)");
+mainContentThree.innerHTML = siteContent["main-content"]["about-h4"];
+let mainContentFour = document.querySelector(".top-content div:nth-of-type(2) p:nth-of-type(1)");
+mainContentFour.innerHTML = siteContent["main-content"]["about-content"];
+let mainContentImg = document.getElementById("middle-img");
+mainContentImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+
+let mainContentSix = document.querySelector(".bottom-content h4:nth-of-type(1)");
+mainContentSix.innerHTML = siteContent["main-content"]["services-h4"];
+let mainContentSeven = document.querySelector(".bottom-content p:nth-of-type(1)");
+mainContentSeven.innerHTML = siteContent["main-content"]["services-content"];
+
+
+let mainContentEight = document.querySelector(".bottom-content div:nth-of-type(2) h4:nth-of-type(1)");
+mainContentEight.innerHTML = siteContent["main-content"]["product-h4"];
+let mainContentNine = document.querySelector(".bottom-content div:nth-of-type(2) p:nth-of-type(1)");
+mainContentNine.innerHTML = siteContent["main-content"]["product-content"];
+
+
+let mainContentTen = document.querySelector(".bottom-content div:nth-of-type(3) h4:nth-of-type(1)");
+mainContentTen.innerHTML = siteContent["main-content"]["vision-h4"];
+let mainContentEleven = document.querySelector(".bottom-content div:nth-of-type(3) p:nth-of-type(1)");
+mainContentEleven.innerHTML = siteContent["main-content"]["vision-content"];
+
+// ------------------------------------
+
+
+
+// contact section 
+
+let contactOne = document.querySelector(".contact h4:nth-of-type(1)");
+contactOne.innerHTML = siteContent["contact"]["contact-h4"];
+let contactTwo = document.querySelector(".contact p:nth-of-type(1)");
+contactTwo.innerHTML = siteContent["contact"]["address"];
+let contactThree = document.querySelector(".contact p:nth-of-type(2)");
+contactThree.innerHTML = siteContent["contact"]["phone"];
+let contactFour = document.querySelector(".contact p:nth-of-type(3)");
+contactFour.innerHTML = siteContent["contact"]["email"];
+
+// ------------------------------------
+
+
+// footer section 
+
+let footer = document.querySelector("footer:nth-of-type(1)");
+footer.innerHTML = siteContent.footer["copyright"];
+
+// ------------------------------------
+
+
+
+
+
+//this fucntion loops through the navigation Arryay and returns each value
+function fillNav (item) {
+  let n = 1;
+  item.forEach( el => {
+    if (el) {
+      el.innerHTML=siteContent.nav[`nav-item-${n}`];
+      n = n+1;
+    }
+  })
+  return item;
+}
+
+// function fillCta (item) {
+//   let n = 1;
+//   item.forEach( el => {
+//     if (el) {
+//       el.innerHTML=siteContent.nav[`nav-item-${n}`];
+//       n = n+1;
+//     }
+//   })
+//   return item;
+// }
+
+// function fillMainContent (item) {
+//   let n = 1;
+//   item.forEach( el => {
+//     if (el) {
+//       el.innerHTML=siteContent.nav[`nav-item-${n}`];
+//       n = n+1;
+//     }
+//   })
+//   return item;
+// }
+
+// function fillContact (item) {
+//   let n = 1;
+//   item.forEach( el => {
+//     if (el) {
+//       el.innerHTML=siteContent.nav[`nav-item-${n}`];
+//       n = n+1;
+//     }
+//   })
+//   return item;
+// }
+
+// function fillFooter (item) {
+//   let n = 1;
+//   item.forEach( el => {
+//     if (el) {
+//       el.innerHTML=siteContent.nav[`nav-item-${n}`];
+//       n = n+1;
+//     }
+//   })
+//   return item;
+// }
+fillNav(navArr);
